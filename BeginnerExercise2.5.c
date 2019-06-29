@@ -1,6 +1,6 @@
 // Old: Write a program that asks the user for a number n and prints the sum of the numbers 1 to n
 // New: Now modify the previous program (old) such that only multiples of three or five are considered in the sum.
-// Example: 3, 5, 6, 9, 10, 12, 15 for n=17
+// Example: 3, 5, 6, 9, 10, 12, 15 for n = 17
 #include <stdio.h>
 
 int main()
