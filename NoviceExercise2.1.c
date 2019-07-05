@@ -7,11 +7,11 @@ int temp; int n = 5;
 
 int main()
 {
-    printf("\n");
     int array[] = {7,4,9,2,5};
     bubblesort(n, array);
 
     // Print
+    printf("\n");
     printf("The largest element in this list is %i. \n", array[n-1]);
     printf("The smallest element in this list is %i. \n \n", array[0]);
 }
