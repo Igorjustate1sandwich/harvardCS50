@@ -2,36 +2,36 @@
 
 #include <stdio.h>
 
-void bubblesort (int count, int *unsorted);
-int temp; int count = 4; int line = 0;
+void bubblesort (int n, int *array);
+int temp; int n = 5; 
 int i;
 
 int main()
 {
     printf("\n");
-    int unsorted[] = {7,9,4,6};
-    bubblesort(count, unsorted);
+    int array[] = {5,4,3,2,1};
+    bubblesort(n, array);
 
     // Print
-    printf("\n Bubble Swap: \n");
-    for (int i = 0; i < count; i++)
+    printf("\nBubble Swap: \n");
+    for (int i = 0; i < n; i++)
     {
-        printf("%i \n", unsorted[i]);
+        printf("%i \n", array[i]);
     }
 }
 
-void bubblesort (int count, int *unsorted)
+void bubblesort (int n, int *array)
 {
-    for (int i = 0; i <  count-1; i++) // MASSIVE NOTE FOR WHY YOU GET 3 AS OUTPUT!! COUNT = 0 HERE AS BASELINE. SEE WHAT HAPPENS WHEN REMOVE NUMERICALS.
+    for (int i = 0; i <  n-1; i++) 
     {
         
-        for (int j = 0; j < count-i-1; j++) // SAME AS ^
+        for (int j = 0; j < n-i-1; j++) 
         {
-            if (unsorted[j] > unsorted[j+1])
+            if (array[j] > array[j+1])
             {
-                temp = unsorted[j];
-                unsorted[j] = unsorted[j+1];
-                unsorted[j+1] = temp;
+                temp = array[j];
+                array[j] = array[j+1];
+                array[j+1] = temp;
             }
         }
     }
