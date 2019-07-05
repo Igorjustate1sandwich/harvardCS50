@@ -11,12 +11,7 @@ int main()
     bubblesort(n, array);
 
     // Print
-    printf("\nBubble Sort: \n");
-    for (int i = 0; i < n; i++)
-    {
-        printf("%i \n", array[i]);
-    }
-}
+    printf("%i \n", array[i]);
 
 void bubblesort (int n, int *array)
 {
