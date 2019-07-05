@@ -1,10 +1,8 @@
 // Learning the Bubble Sort 
-
 #include <stdio.h>
 
 void bubblesort (int n, int *array);
 int temp; int n = 5; 
-int i;
 
 int main()
 {
@@ -13,7 +11,7 @@ int main()
     bubblesort(n, array);
 
     // Print
-    printf("\nBubble Swap: \n");
+    printf("\nBubble Sort: \n");
     for (int i = 0; i < n; i++)
     {
         printf("%i \n", array[i]);
