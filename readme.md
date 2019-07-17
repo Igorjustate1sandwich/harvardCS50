@@ -6,6 +6,8 @@ This is where I am teaching myself how to program via CS50.
 * Algortihims: Bubble Sort
 * Pointers
 * Structs
+* Data Structures
 
 ## Resources used:
-https://adriann.github.io/programming_problems.html
+* https://adriann.github.io/programming_problems.html
+* Harvard CS50
