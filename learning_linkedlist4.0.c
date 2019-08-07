@@ -118,10 +118,12 @@ void deleteList(struct node** head)
 int main()
 {
     // Create some nodes.
-    insertEnd(&head, 100);
-    insertEnd(&head, 200);
-    insertEnd(&head, 300);
-    insertMiddle(250, 2);
+    insertBeginning(&head, 100);
+    insertMiddle(200, 2);
+    insertMiddle(300, 3);
+    insertEnd(&head, 400);
+
+
 
     // Print the entire list.
     printf("\nContents of linked list:\n");
