@@ -24,7 +24,7 @@ int main()
         Watch what happens when you set firstN[25] to firstN[7] */
 
    /*******************************************************************
-    puts() & gets() [Not Reccomended, use fgets() instead]
+    puts() & gets() [Not Recommended, use fgets() instead]
     - easy way to print and get strings from the user.
     - use gets() when you get strings that contain spaces.
     - scanf cannot grab strings with spaces.

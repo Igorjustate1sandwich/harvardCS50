@@ -6,7 +6,7 @@
 */
 
 #include <stdio.h>
-#include <ctype.h>
+#include <ctype.h>  // REQUIRED FOR THE NEW FUNCTIONS
 #include <string.h>
 #include <stdlib.h>
 
