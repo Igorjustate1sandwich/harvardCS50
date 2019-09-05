@@ -1,0 +1,107 @@
+/*
+    - Simple Program that will take a user inputted dataset and then perform
+      a statistical analysis.
+    - Print statistical analysis to a text document.
+    - Allow user to choose a custom name for document.
+    - bonus: fgets() to replace scanf
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main()
+{
+    double * array;                // stores user dataset
+    int aSize;                  // user defined dataset size
+
+    double mean, mode, median, median_even, med_inner, med_outer, median_temp, sDev, IQR;
+
+    // get dataset size
+    printf("Enter size of dataset: ");
+    scanf(" %d", &aSize);
+
+    // allocate dataset memory
+    array = malloc(aSize * sizeof(double));
+
+    // get user input until size n
+    for (int i = 0; i < aSize; i++)
+    {
+        printf("Enter value for element %d: ", i);
+        scanf(" %lf", &array[i]); 
+    }
+
+    // sort data for clarity
+    for (int i = 0; i < aSize; i++)
+    {
+        for (int j = i; j < aSize; j++)
+        {
+            if (array[i] > array[j])
+            {
+                int temp;
+                temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+    }
+
+    // statistical analysis
+    // calculate median if aSize = odd
+    median_temp = (aSize + 1) / 2;       // eg = 5,6,7,8,9  = element 3
+    for (int i = 0; i < median_temp; i++)
+    {
+        median = array[i];
+    }
+
+    // calculate median if aSize = even
+    median_temp = aSize / 2;
+    float inner,outer;
+    int ctr1, ctr2;
+    ctr1 = ctr2 = 0;
+
+    for (int inner = median_temp -1; inner <= median_temp; inner++)
+    {
+        for (int outer = median_temp - 1; outer<= median_temp; outer++)
+        {
+            med_outer = array[outer];
+            ctr2++;
+        }
+
+        if (inner == median_temp)
+        {
+            break;
+        }
+        med_inner = array[inner];
+        ctr1++;
+    }
+    //ctr1 +=2;
+    //ctr2 -=2;
+
+
+    // calculate mean
+    for (int i = 0; i < aSize; i++)
+    {
+        mean += array[i];
+
+        // median formula for odd = (aSize + 1) / 2
+        // median formula for even = ((aSize/2) + (aSize+2/2) / 2)
+
+        //printf("Array %d: %f \n", i, array[i]);
+
+    }
+    mean = mean/aSize;
+
+    printf("Mean: %1.f \n", mean);
+    printf("Median (odd): %1.f \n", median);
+
+    
+    //printf("med size: %f \n", median_temp);
+    printf("Median (i): %d \n", ctr1);
+    printf("Median (j): %d \n", ctr2);
+    //printf("Median (even): %f \n", median_even);
+    
+
+
+
+}

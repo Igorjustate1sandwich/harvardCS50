@@ -1,4 +1,5 @@
 /*
+    Chapter 25: Arrays and Pointers (Part 2/2)
     movie ranking program
 */
 

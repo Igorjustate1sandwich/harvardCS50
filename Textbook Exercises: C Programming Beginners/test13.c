@@ -1,5 +1,5 @@
 /*
-    Ch25. Arrays and Pointers
+    Chapter 25: Arrays and Pointers (Part 1/2)
     - array names are known as pointer constants.
     - fgets() is better than scanf and gets().
 */
