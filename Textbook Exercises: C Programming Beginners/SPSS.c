@@ -236,7 +236,8 @@ int main()
     printf("\n");
 
 // File Output
-    fptr = fopen("/home/sahil/Documents/Learning/SPSSOutput.txt", "w");
+int test;
+    fptr = fopen("/home/stndn/Documents/Learning/SPSSOutput.txt", "w");
 
     fprintf(fptr, "*** Output for N = %d *** \n",aSize);
     fprintf(fptr, " 1. Mean: %.1f \n", mean);

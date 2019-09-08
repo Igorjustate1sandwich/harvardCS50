@@ -1,21 +1,14 @@
-*** Output for N = 12 *** 
- 1. Mean: 12.4 
- 2. Median: 7.5 
- 3. Mode: 24 
- 4. Standard Deviation: 10.105 
- 5. Interquartile Range: 18.25 [Lower: 4.2 | Upper: 22.5] 
+*** Output for N = 5 *** 
+ 1. Mean: 3.0 
+ 2. Median: 3.0 
+ 3. Mode: 4 
+ 4. Standard Deviation: 1.414 
+ 5. Interquartile Range: 3.00 [Lower: 1.5 | Upper: 4.5] 
 
 
 User Dataset: 
-2.30 
+1.00 
+2.00 
 3.00 
-3.50 
+4.00 
 5.00 
-6.00 
-6.00 
-9.00 
-11.00 
-22.00 
-23.00 
-24.00 
-34.00 
