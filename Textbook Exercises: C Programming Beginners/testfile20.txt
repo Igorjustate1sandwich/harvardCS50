@@ -1,3 +1,0 @@
-This is a test file to be opened by fopen() in test20.c. 
-
-Hello.
