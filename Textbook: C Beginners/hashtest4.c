@@ -1,3 +1,9 @@
+/* Basic Hash Table Implementation via Linked List */
+/*
+    Takes value and generates a hash key. Insert value into a hash table slot (slot = key).
+*/
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -143,9 +149,6 @@ void deleteList(struct node** head)
     }
     *head = NULL;
 }
-
-
-
 
 int main()
 {
