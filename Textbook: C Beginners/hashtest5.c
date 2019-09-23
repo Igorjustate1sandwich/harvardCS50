@@ -1,6 +1,7 @@
 /* Basic Hash Table Implementation via Linked List */
 /*
     Takes value and generates a hash key. Insert value into a hash table slot (slot = key).
+    New: Implement collision detection.
 */
 
 
@@ -24,7 +25,6 @@ typedef struct node
 }   
 node;
 node* head = NULL;
-
 
 
 // Hash Function 
@@ -66,7 +66,7 @@ void createNode (struct node** head, char new_data[LENGTH])
     return;
 }
 
-// Function to create a hash table with size = 10 nodes
+// Function to create a hash table with size = SIZE
 void createTable (int size)
 {
     for (int i = 1; i <= size; i++)
