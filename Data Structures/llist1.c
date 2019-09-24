@@ -3,67 +3,68 @@
 
 typedef struct node
 {
-    int data;
+    int val;
     struct node* next;
 }   
 node;
-node* head = NULL;
+node * array[26];
 
-int array[10];          // array of size 10
-
-// Create a linked list
-void insert(struct node** head, int new_data)
+// Function to create a new node
+node *new_node(int new_val, node *next)
 {
-    // 1. Allocate memory for the new node.
-    node* new_node = malloc(sizeof(node));
-    node* last = *head;
-
-    // 2. Place data within the new node.
-    new_node -> data = new_data;
-
-    // 3. As this new node will be the last node in the list, point it to NULL.
-    new_node -> next = NULL;
-
-    // 4. If the list is empty, make this new node the head.
-    if (*head == NULL)
-    {
-        *head = new_node;
-        return;
-    }
-
-    // 5. Otherwise, traverse until you find the last node.
-    while (last -> next != NULL)
-    {
-        last = last -> next;
-    }
-
-    // 6. Then make the last node point to our new node.
-    last -> next = new_node;
-    return;
+    node *head = malloc(sizeof(node));
+    head -> val = new_val;
+    head -> next = NULL;
+    return head;
 }
 
-
-// Print contents of linked list.
-void printList(struct node *node) 
+// Function to insert a new node at the end of the list
+void push (node *head, int new_val)
 {
-    int ctr = 1;
-    while (node != NULL) 
+    /* We must first iterate over all existing items to reach the end of the list */
+    node * current = head;
+    while (current -> next != NULL) 
     {
-        printf("Node %d: %d \n", ctr, node->data); 
-        node = node->next;
-        ctr++;
-    } 
-} 
+        current = current -> next;
+    }
+
+    /* Now we are at the end of the list, let's add a new variable */
+    current -> next = malloc(sizeof(node));      
+    current -> next -> val = new_val;    
+    current -> next -> next = NULL;        
+
+}
+
+// Print Function that iterates over a list 
+void printList(node * head) {
+    node * current = head;
+
+    while (current != NULL) {
+        printf("%d \n", current -> val);
+        current = current ->next;
+    }
+}
 
 int main()
 {
-    /* Insert 5 nodes (10,20,30,40,50) */
-    for (int i = 1; i <= 5; i++)
-    {
-        insert(&head, i*10);
-    }
+    /* Create some lists    */
+    node* list1 = malloc(sizeof(node));
+    node* list2 = malloc(sizeof(node));
 
-    /* Print output */
-    printf("Contents of Singly Linked List: \n");
-    printList(head);
+    /* Fill list 1 with data    */
+    push(list1, 5);
+    push(list1, 10);
+    push(list1, 15);
+
+    /* FIll list 2 with data   */
+    push(list2, 500);
+    push(list2, 1000);
+    push(list2, 1500);
+
+    /* Set arrays to each list  */
+    array[0] = list1;
+    array[1] = list2;
+
+    /* Print Output   */;
+    printList(array[0]);
 }
