@@ -18,8 +18,9 @@ node *new_node(int new_val, node *next)
     return head;
 }
 
-// Function to insert a new node at the end of the list
-void push (node *head, int new_val)
+// Function to insert a new node at the end of the list (slow insertion)
+/* Appending is slow because you must first iterate list to reach the end */
+void append (node *head, int new_val)
 {
     /* We must first iterate over all existing items to reach the end of the list */
     node * current = head;
@@ -34,6 +35,7 @@ void push (node *head, int new_val)
     current -> next -> next = NULL;        
 
 }
+
 
 // Print Function that iterates over a list 
 void printList(node * head) {
@@ -52,14 +54,14 @@ int main()
     node* list2 = malloc(sizeof(node));
 
     /* Fill list 1 with data    */
-    push(list1, 5);
-    push(list1, 10);
-    push(list1, 15);
+    append(list1, 5);
+    append(list1, 10);
+    append(list1, 15);
 
     /* FIll list 2 with data   */
-    push(list2, 500);
-    push(list2, 1000);
-    push(list2, 1500);
+    append(list2, 500);
+    append(list2, 1000);
+    append(list2, 1500);
 
     /* Set arrays to each list  */
     array[0] = list1;

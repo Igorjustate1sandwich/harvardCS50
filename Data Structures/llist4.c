@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
+
+#define LENGTH 50
+#define SIZE 26
+int key;
+char value[LENGTH];
 
 typedef struct node
 {
@@ -9,6 +15,15 @@ typedef struct node
 }   
 node;
 node * listArray[26];
+
+
+// Hash Function 
+unsigned int hash(const char *word)
+{
+    key = tolower(word[0]) - 'a';  // return a key between 0 and 26-1
+    key = key % SIZE;
+    return key;
+}
 
 // Function to create a new node
 node *new_node(char new_val[40], node *next)
@@ -57,7 +72,7 @@ void push (node **head, char new_val[40])
 // Function that iterates over a list printing everything
 void printList(node * head) {
     while (head != NULL) {
-        printf("%s \n", head -> val);
+        printf("%s ", head -> val);
         head = head ->next;
     }
 }
@@ -70,20 +85,27 @@ int main()
         listArray[i] = malloc(sizeof(node));
     }
 
-    /* Fill lists with data */
-    push(&listArray[0], "Adam");         // Storing all names with letter "A" in listArray[0]
-    push(&listArray[0], "Andrew");       
-    push(&listArray[0], "Austin");
 
-    push(&listArray[1], "Barry");       // Storing all names with letter "B" in listArray[1]
-    push(&listArray[1], "Bob");
-    push(&listArray[1], "Bertha");
+    /* Use hash function to get a key, then fill the 26 linked lists with user data! */
+    while(1)
+    {
+        /* Generate a hash key      */
+        printf("\nEnter a value to generate a hash key: ");
+        scanf(" %s", value);
+        hash(value);
+        printf("Hash Value: %s | Hash Key: %d  \n\n", value, key);
 
-    push(&listArray[3], "David");      // Storing all names with letter "D" in listArray[3]
-    push(&listArray[3], "Davos");
-    push(&listArray[3], "Dane");
+        /* Add value to the correct linked list (key-array pair) */
+        push(&listArray[key], value);
 
-
-    /* Print Output   */;
-    printList(listArray[3]);            // Print all the names that start with letter "D"
+        /* Print the contents of the hash table     */
+        printf(" ** Hash Table ** \n");
+        printf("Key      Value\n");
+        for(int i = 0; i < SIZE; i++)
+        {
+            printf("List[%d]: ", i);
+            printList(listArray[i]);
+            printf("\n");
+        }
+    }
 }
