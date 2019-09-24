@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 
 typedef struct node
 {
@@ -10,8 +9,10 @@ typedef struct node
 node;
 node* head = NULL;
 
-// Function to create a new node at the end of a list.
-void insertEnd(struct node** head, int new_data)
+int array[10];          // array of size 10
+
+// Create a linked list
+void insert(struct node** head, int new_data)
 {
     // 1. Allocate memory for the new node.
     node* new_node = malloc(sizeof(node));
@@ -41,7 +42,8 @@ void insertEnd(struct node** head, int new_data)
     return;
 }
 
-// Function to print contents of linked list.
+
+// Print contents of linked list.
 void printList(struct node *node) 
 {
     int ctr = 1;
@@ -55,10 +57,13 @@ void printList(struct node *node)
 
 int main()
 {
-    for (int i = 1; i <= 100; i++)
+    /* Insert 5 nodes (10,20,30,40,50) */
+    for (int i = 1; i <= 5; i++)
     {
-        insertEnd(&head, i);
+        insert(&head, i*10);
     }
-    printf("Contents of Linked List: \n");
+
+    /* Print output */
+    printf("Contents of Singly Linked List: \n");
     printList(head);
 }
