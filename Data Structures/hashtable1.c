@@ -74,17 +74,20 @@ void push (node **head, char new_val[LENGTH])
     strcpy(new_node -> val, new_val);   // new_node now stores the value "Adam".
 
 
-    new_node-> next = *head;            // Adam points to whatever the head (listArray[0]) is pointing to (NULL).
-                                        //      listArray[0] -> NULL
+    new_node-> next = *head;            // Adam points to whatever the head (listArray[0]) is equal to (NULL). Because there is nothing in listArray[0], lA[0] = NULL.
+                                        //      listArray[0] = NULL
                                         //      Adam -> NULL
-    *head = new_node;                   // The head (listArray[0]) now points to Adam.
-                                        //      listArray[0] -> Adam -> NULL
+    *head = new_node;                   // The head (listArray[0]) now EQUALS to Adam.
+                                        //      listArray[0] = Adam -> NULL
 
                                         // Assume you add "Andrew" to the linked list
-                                        // Andrew points to whatever the head (listArray[0]) is pointing to (Adam)
+                                        // Andrew points to whatever the head (listArray[0]) is EQUAL to (Adam)
                                         //      Andrew -> Adam -> NULL      
-                                        // The head (listArray[0]) now points to Andrew
-                                        //      listArray[0] -> Andrew -> Adam -> NULL
+                                        // The head (listArray[0]) now EQUALS to Andrew
+                                        //      listArray[0] = Andrew -> Adam -> NULL
+                                        
+                                        // Note: There is an important difference between 'pointing to' and 'equals'.
+                                        // VISUALISATION:   https://i.imgur.com/BSDm6V6.png
 }
 
 // Function that iterates over a list printing everything
@@ -100,7 +103,7 @@ int main()
     /* Create 26 Linked Lists   */
     for (int i = 0; i < 25; i++)
     {
-        listArray[i] = malloc(sizeof(node));
+        listArray[i] = NULL;
     }
 
     /* Use hash function to get a key, then fill the 26 linked lists with user data! */
