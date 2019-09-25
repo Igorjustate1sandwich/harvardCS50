@@ -62,7 +62,7 @@ void append (node *head, char new_val[40])
 Push: Insert a new item at start, push all existing items further down. Fast because
 items added to the start of the linked list has Time Complexity O(1) constant time. 
 
-Where **head == The start of X linked list 
+Where **head == listArray[n]
 Where new_val == Data to store at the head of a given linked list.
 
 */

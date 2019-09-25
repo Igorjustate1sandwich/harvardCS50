@@ -1,3 +1,5 @@
+// Note: See llist4.c for the final, good explanation of how linked lists work.
+
 #include <stdio.h>
 #include <stdlib.h>
 
