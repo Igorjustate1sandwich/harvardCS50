@@ -26,8 +26,8 @@ int main()
 
 
     // Example Section 2: Characters & Pointers
-    char name[50] = "Tyrion Lannister";        // name points to J
-    char * pName = "Tyrion Lannister";         // pName points to J
+    char name[50] = "Tyrion Lannister";        // name points to T
+    char * pName = "Tyrion Lannister";         // pName points to T
 
     /* Normally if you wanted to change name you'd need to use strcpy */
     strcpy(name, "Jon Snow");   // make sure array has enough mem

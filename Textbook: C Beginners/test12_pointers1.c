@@ -11,7 +11,7 @@ int main()
     & == Address-of operator [used to assign address of a var to a ptr]
     * == Dereferencing operator and is also used to define a pointer variable.                                    */
 
-    int age = 21;   /* store num 19 in variable age */
+    int age = 21;   /* store num 21 in variable age */
     int * pAge;     /* define a new pointer variable */
                     /* the * tells C that the variable pAge is a ptr */  
     pAge = &age;   /* put the memory address of age into pAge */
