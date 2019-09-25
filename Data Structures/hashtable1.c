@@ -1,3 +1,16 @@
+/*
+    - This hash table uses 26 singly linked lists and an array for fast lookup O(1).
+    - There are 26 letters in the alphabet, therefore we have 26 linked lists. Each list
+      stores names starting with a certain letter. Example:
+        listArray[0] stores head of Linked List 1 (all names starting with A)
+        listArray[1] stores head of Linked List 2 (all names starting with B)
+        ..... etc......
+    - User inputs a name which is sent to hash function. Hash function generates a key between 
+      0 - 26. The name is then stored at listArray[key].
+        - e.g. The name Carl has a key of 2 and is stored in listArray[2].
+*/
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -5,6 +18,7 @@
 
 #define LENGTH 50
 #define SIZE 26
+
 int key;
 char value[LENGTH];
 
@@ -25,17 +39,7 @@ unsigned int hash(const char *word)
     return key;
 }
 
-// Function to create a new node
-node *new_node(char new_val[40], node *next)
-{
-    node *head = malloc(sizeof(node));
-    strcpy(head -> val, new_val);
-    head -> next = NULL;
-    return head;
-}
-
-/* 
-Function to insert a new node at the end of the list (SLOW insertion)
+/* Function to insert a new node at the end of the list (SLOW insertion)
 Append: Add item to the end of the linked list. Slow because you need to first iterate the
 entire list to determine the end. Time complexity of O(n) linear time.
 */
@@ -54,8 +58,7 @@ void append (node *head, char new_val[40])
     current -> next -> next = NULL;        
 }
 
-/* 
-Function to insert a new node at the start of a list (FAST insertion)
+/* Function to insert a new node at the start of a list (FAST insertion)
 Push: Insert a new item at start, push all existing items further down. Fast because
 items added to the start of the linked list has Time Complexity O(1) constant time. 
 */
@@ -103,8 +106,7 @@ int main()
         for(int i = 0; i < SIZE; i++)
         {
             printf("List[%d]: ", i);
-            printList(listArray[i]);
-            printf("\n");
+            printList(listArray[i]); printf("\n");
         }
     }
 }
