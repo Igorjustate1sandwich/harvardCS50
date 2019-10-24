@@ -8,6 +8,7 @@
     - User inputs a name which is sent to hash function. Hash function generates a key between 
       0 - 26. The name is then stored at listArray[key].
         - e.g. The name Carl has a key of 2 and is stored in listArray[2].
+        test.
 */
 
 #include <stdio.h>
