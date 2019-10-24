@@ -55,7 +55,7 @@ int main()
     node* list1 = malloc(sizeof(node));
     node* list2 = malloc(sizeof(node));
 
-    /* Fill list 1 with data    */
+    /* Fill list 1 with data.    */
     append(list1, 5);
     append(list1, 10);
     append(list1, 15);
