@@ -4,7 +4,7 @@
 #include <ctype.h>
 
 #define LENGTH 50
-#define TABLE_SIZE 3
+#define TABLE_SIZE 5
 
 int key;
 char value[LENGTH];

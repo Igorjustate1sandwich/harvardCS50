@@ -85,5 +85,5 @@ int main()
 
 
     /* Print Output   */;
-    printList(listArray[3]);            // Print all the names that start with letter "D"
+    printList(listArray[1]);            // Print all the names that start with letter "D"
 }
