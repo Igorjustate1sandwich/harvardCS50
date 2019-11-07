@@ -15,6 +15,8 @@ typedef struct node
     struct node* next;
 }   
 node;
+
+// Represent a hash table with 5 slots
 node * slot[TABLE_SIZE];
 
 /* Hash Function by Engineer Man    */

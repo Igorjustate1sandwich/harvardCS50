@@ -1,0 +1,9 @@
+Pseudocode for Speller.c
+
+Check function:
+
+1. Hash the word to find it's position in the hashtable.
+2. Go to hashtable[key] and traverse it's linked list to see if the word exists.
+
+If the word exists, return true.
+Else, return false.
