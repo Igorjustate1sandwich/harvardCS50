@@ -1,4 +1,5 @@
-data = 6011000990139424
+# Variables
+data = 4222222222222
 size = len(str(data))
 sumDigits = 0
 
@@ -6,7 +7,7 @@ sumDigits = 0
 numbers = [int(x) for x in str(data)]
 
 # Luhns Algorithim
-for i in range(size-2, 0, -2):
+for i in range(size-2, -1, -2):
     # Step 1: Double value of every second digit
     numbers[i] = numbers[i] * 2
 
@@ -22,14 +23,14 @@ for i in range(size-2, 0, -2):
     # Step 3: sumDigits all the digits
     total = sum(numbers)
 
+
 # Step 4: Determine validity via modulo
-print("\nCard:", data)
 if (total % 10) == 0:
     print("\nCredit card validated successfully! Mod:", total%10)
 else:
     print("\nInvalid credit card. Mod:", total%10)
 
-# For testing purposes only...
+
 
 
 
