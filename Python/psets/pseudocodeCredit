@@ -1,0 +1,10 @@
+Psuedocode for Credit
+
+counter = 1
+    Start at array[counter]
+        temp = array[1]
+        temp = temp * 2
+        array[1] = temp
+        counter+2
+    
+aka start at array[1], do calculation then jump to array[3]
