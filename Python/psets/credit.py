@@ -1,6 +1,22 @@
-# Variables
-print("\nNumber:", end=" ")
-data = input()
+# Final solution for pset6 (credit) by stndn.
+# Conditional checking & variable declarations
+while True:
+    print("\nNumber:", end=" ")
+    data = input()
+
+    # Convert string input into integer (because credit card numbers are integers....)
+    try:
+        data = int(data)
+    except ValueError:
+        print("Invalid input. Try again.")
+        continue
+
+    # Make sure data is positive (because credit card numbers don't have negative values...)
+    if data <= 0:
+        print("Invalid input. Try again.")
+    else:
+        break
+
 size = len(str(data))
 sumDigits = 0
 total = 0
@@ -9,7 +25,6 @@ total = 0
 numbers = [int(x) for x in str(data)]
 
 # Determine whether card is VISA, AMEX or Mastercard (or neither)
-print(numbers)
 if numbers[0] == 4:
     card = "VISA"
 elif numbers[0] == 3 and numbers[1] == 4 or numbers[1] == 7:
@@ -41,16 +56,3 @@ if (total % 10) == 0:
     print(card)
 else:
     print("INVALID\n")
-
-
-
-
-
-
-
-
-
-        
-
-
-
