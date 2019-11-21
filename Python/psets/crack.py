@@ -12,7 +12,7 @@ password = "rob"
 hashedPassword = "51v3Nh6ZWGHOQ"
 
 # salt for hashedPassword = first two characters
-salt = "51"
+salt = "51" #this is just a fake test salt for testing purposes
 
-print("\n", crypt.crypt("rob", salt))
+print("\n", crypt.crypt("b", salt))
 
