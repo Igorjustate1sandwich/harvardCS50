@@ -24,9 +24,10 @@ for i in range (0, 26):
         for k in range (0, 26):
             for n in range (0, 26):
                 for m in range (0, 26):
+                    counter+= 1
                     tempPass0 = alphaLow[i] + alphaLow[j] + alphaLow[k] + alphaLow[n] + alphaLow[m]
                     tempHash0 = crypt.crypt(tempPass0, salt)
-                    counter += 1
+
                     
                     if tempHash0 == hash:
                         print(f"\nAttempt {counter} SUCCESS: PASSWORD = {tempPass0} as {tempHash0} is equivalent to {hash}")
