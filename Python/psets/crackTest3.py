@@ -13,10 +13,10 @@ alphaUp = list(string.ascii_uppercase)
 counter = 0
 
 # real password in plaintext
-password = "ZZZ"
+password = "emc"
 
 # salt for testing purposes
-salt = "51"
+salt = "50"
 
 # hash of password 
 hash = crypt.crypt(password, salt)
