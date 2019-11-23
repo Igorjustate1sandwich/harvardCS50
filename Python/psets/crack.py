@@ -3,16 +3,23 @@
 # Accuracy is high, speed is much faster than v2 but much slower than v1 for non permutations (e.g. "AAAZ" or "aaaz")
 # Generate test hashes via https://unix4lyfe.org/crypt/ 
 
+import sys
 import crypt
 import time
 
+# Argument check
+if len(sys.argv) != 2:
+    print("\nIncorrect Usage! Format: python3 crack.py hashvalue\n")
+    exit()
+
+# Variables
+ctr = 0                     # Used to track attempts.
+hash = sys.argv[1]          # Get first argument to form hash.
+salt = sys.argv[1][:2]      # Get first two characters of first argument to form salt.
+alphabet = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
 # Track time
 start_time = time.time()
-
-counter = 0
-salt = "50"
-hash = "50yKr2Re0RQqs"
-alphabet = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 # crack a 5 character password
 for i in (alphabet):
@@ -26,5 +33,5 @@ for i in (alphabet):
                     if tempHash == hash:
                         print(f"\nSUCCESS: PASSWORD = {tempPass} as {tempHash} = {hash} | {time.time() - start_time:.2f} seconds")
                         exit()
-                    counter+= 1
-                    print(f"Attempt {counter} FAIL: {tempPass} = {tempHash} != {hash} | {time.time() - start_time:.2f} seconds")    
+                    ctr+= 1
+                    print(f"Attempt {ctr} FAIL: {tempPass} = {tempHash} != {hash} | {time.time() - start_time:.2f} seconds")    
