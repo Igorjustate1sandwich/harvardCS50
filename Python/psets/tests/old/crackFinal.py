@@ -28,3 +28,11 @@ for i in (alphabet):
                         exit()
                     counter+= 1
                     print(f"Attempt {counter} FAIL: {tempPass} = {tempHash} != {hash} | {time.time() - start_time:.2f} seconds")    
+
+
+
+
+
+
+
+

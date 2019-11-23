@@ -1,4 +1,4 @@
-# crackTest4.py tests cracks letters that are lowercase and encrypted via DES
+# crackTest4.py tests cracks 3 letters that are lowercase and encrypted via DES
 # In this example, hash value 50PaJ4.RO0YUo with salt = 50 will reveal password "abc"
 
 import crypt

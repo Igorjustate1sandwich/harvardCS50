@@ -1,0 +1,9 @@
+ # Create temp passwords that are a combination of lower and uppercase characters
+        tempPassList = casePermutate(tempPass)
+
+32 permutations for a 5 character string:
+
+
+['aaaet', 'aaaeT', 'aaaEt', 'aaaET', 'aaAet', 'aaAeT', 'aaAEt', 'aaAET', 'aAaet', 'aAaeT', 'aAaEt', 'aAaET', 'aAAet', 'aAAeT',
+ 'aAAEt', 'aAAET', 'Aaaet', 'AaaeT', 'AaaEt', 'AaaET', 'AaAet', 'AaAeT', 'AaAEt', 
+'AaAET', 'AAaet', 'AAaeT', 'AAaEt', 'AAaET', 'AAAet', 'AAAeT', 'AAAEt', 'AAAET']

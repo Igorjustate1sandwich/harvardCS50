@@ -1,4 +1,5 @@
 # Crack a five character alphabetical password that has been hashed via DES level encryption
+# does NOT account for case permutations, so speed is much faster but less accurate.
 
 import crypt
 import string
@@ -12,13 +13,11 @@ alphaLow = list(string.ascii_lowercase)
 alphaUp = list(string.ascii_uppercase)
 counter = 0
 
-# salt 
+# variables
 salt = "50"
+hash = "50CcfIk1QrPr6"
 
-# password hash
-hash = "50nVxcXb1Y2Hg"
-
-# check for a lowercase and uppercase pword
+# check for a lowercase pword
 for i in range (0, 26):
     for j in range (0, 26):
         for k in range (0, 26):
@@ -28,7 +27,6 @@ for i in range (0, 26):
                     tempPass0 = alphaLow[i] + alphaLow[j] + alphaLow[k] + alphaLow[n] + alphaLow[m]
                     tempHash0 = crypt.crypt(tempPass0, salt)
 
-                    
                     if tempHash0 == hash:
                         print(f"\nAttempt {counter} SUCCESS: PASSWORD = {tempPass0} as {tempHash0} is equivalent to {hash}")
                         print(f"***** Cracked in {time.time() - start_time:.4f} seconds *****\n ")
