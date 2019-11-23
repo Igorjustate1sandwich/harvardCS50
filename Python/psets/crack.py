@@ -1,9 +1,9 @@
 # Crack a 1 to 5 character alphabetical password that has been hashed via DES level encryption
 # Accounts for case permutations via "alphabet", loop modifications and strip(). 
 # Accuracy is high, speed is much faster than v2 but much slower than v1 for non permutations (e.g. "AAAZ" or "aaaz")
+# Generate test hashes via https://unix4lyfe.org/crypt/ 
 
 import crypt
-import string
 import time
 
 # Track time
@@ -11,7 +11,7 @@ start_time = time.time()
 
 counter = 0
 salt = "50"
-hash = "50/St1HQJnW6U"
+hash = "50yKr2Re0RQqs"
 alphabet = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 # crack a 5 character password
