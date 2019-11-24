@@ -4,6 +4,7 @@
 import crypt
 import string
 import time
+import sys
 
 # Track time
 start_time = time.time()
@@ -12,10 +13,16 @@ start_time = time.time()
 alphaLow = list(string.ascii_lowercase)
 alphaUp = list(string.ascii_uppercase)
 
+# Argument check
+if len(sys.argv) != 2:
+    print("\nIncorrect Usage! Format: python3 crack.py hashvalue\n")
+    exit()
+
 # Variables
-counter = 0
-salt = "50"
-hash = "50/St1HQJnW6U"      # = "AAAZ"
+counter = 0                     # Used to track attempts.
+hash = sys.argv[1]          # Get first argument to form hash.
+salt = sys.argv[1][:2]      # Get first two characters of first argument to form salt.
+
 
 # check for a 3 character password
 for i in range (0, 26): 
