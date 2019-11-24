@@ -1,47 +1,43 @@
 import sys
 
-# usage checking
+# Usage checking
 if (len(sys.argv)) != 2:
     print("Usage: python3 bleep.py dictionaryfile")
     exit(1)
 
 def main():
-    # open and read file
+    # Open and read file
     f = open(f"{sys.argv[1]}", "r")
     file = f.read()
     file = file.split()
 
-    # Convert file contents to uppercase and lowercase
-    fileUp = [file.upper() for file in file]
-    fileLow = [file.lower() for file in file]
+    # Convert file contents to uppercase and lowercase, then store in a python set
+    bannedWordsUpper = set(file.upper() for file in file)    
+    bannedWordsLower = set(file.lower() for file in file)    
 
-    # Store file contents in python set
-    bannedWordsUpper = set(fileUp)      # contains words that are lower ("heck", "gosh" etc...)
-    bannedWordsLower = set(fileLow)     # contains words that are upper ("HECK", "GOSH" etc...)
-
-    # prompt user to provide a message
+    # Prompt user to provide a message
     print("What message would you like to censor?")        
-    modifiedMsg = input().split()
+    message = input().split()
 
     # Compare user message with lowercase and uppercase banned words then make modifications
-    for x in range(len(modifiedMsg)):
-        for i in bannedWordsUpper:
-            if modifiedMsg[x] == i:
+    for x in range(len(message)):
+        for bannedWord in bannedWordsUpper:
+            if message[x] == bannedWord:
                 bleep = ""
-                for j in range(len(i)):
+                for j in range(len(bannedWord)):
                     bleep = bleep + "*"
-                modifiedMsg[x] = bleep
+                message[x] = bleep
 
-        for i in bannedWordsLower:
-            if modifiedMsg[x] == i:
+        for bannedWord in bannedWordsLower:
+            if message[x] == bannedWord:
                 bleep = ""
-                for j in range(len(i)):
+                for j in range(len(bannedWord)):
                     bleep = bleep + "*"
-                modifiedMsg[x] = bleep
+                message[x] = bleep
 
     # Return censored version of user message
-    modifiedMsg = " ".join(modifiedMsg)
-    print(modifiedMsg)
+    message = " ".join(message)
+    print(message)
 
 
 if __name__ == "__main__":
