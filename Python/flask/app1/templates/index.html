@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+    </head>
+    <body>
+        <h1>Home page</h1>
+
+        <p> Here are the names of the people on the list </p>
+        {% for name in names %}
+            <p> Name: {{ name }} </p>
+        {% endfor %}
+    </body>
+</html>
