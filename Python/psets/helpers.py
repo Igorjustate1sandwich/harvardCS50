@@ -1,3 +1,6 @@
+# PSET7: Similarities
+# helpers.py requires the rest of pset7 to execute
+# View helpers_fl.py for the independent CLI version of this file
 from nltk.tokenize import sent_tokenize
 
 

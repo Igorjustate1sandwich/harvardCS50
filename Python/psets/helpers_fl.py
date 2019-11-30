@@ -1,4 +1,4 @@
-# This was the working file for pset7: similarities
+# WIP file for pset7: similarities
 # This code is functionless and will run independently.
 # Final code is in helpers.py
 import sys
