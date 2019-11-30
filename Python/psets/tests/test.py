@@ -1,16 +1,20 @@
-import crypt
-import string
+## Documentation helps greatly when it comes to detecting substrings via the slice function.
+## https://docs.python.org/3/tutorial/introduction.html#strings
+similarSubs= []
 
-alphaLow = list(string.ascii_lowercase)
-alphaUp = list(string.ascii_uppercase)
+word = "string"
+#word = word.replace(" ", "")
 
-test=[]
-test.append(crypt.crypt("cat", "50"))
-test.append(crypt.crypt("dog", "50"))
-test.append(crypt.crypt("eel", "50"))
+n = 3
+j = n
+x = 0
 
-
-#for i in range (len(test)):
-    #print(test[i])
-
-print(crypt.crypt("aaaab","50"))
+# Find substrings
+while x < (len(word)):
+    similarSubs.append(word[x:j])
+    j+=1
+    x+=1
+    # If a potential substring is not exactly n characters long then QUIT as there are no more substrings to find.
+    if (len(word[x:j]) != n):
+        break
+print(similarSubs)
