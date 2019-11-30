@@ -1,0 +1,49 @@
+# working file for pset7 (similarities)
+import sys
+import nltk.tokenize
+
+similarLines = []
+similarSents = []
+similarSubs = []
+
+# open files
+f = open("/home/stndn/Documents/Git Repo/Learning/Python/psets/similarities/inputs/LesMis1.txt", "r")
+file1 = f.read()
+
+f = open("/home/stndn/Documents/Git Repo/Learning/Python/psets/similarities/inputs/LesMis2.txt", "r")
+file2 = f.read()
+
+# split strings into lines and store in list
+text1 = file1.splitlines()
+text2 = file2.splitlines()
+
+# compare lines in text1 and text2 and print similarities
+ctr = 0
+for i in range(len(text1)):
+    for j in range(len(text2)):
+        if text1[i] == text2[j] and len(text1[i]) >=1:
+            ctr += 1
+            #print("\nSimilarities detected (line)")
+            #print(f"Line in text1: {text1[i]}")
+            #print(f"Line in text2: {text2[j]}\n")
+            #break           
+#print(ctr)
+ctr = 0
+
+# Split strings into sentences and store in list
+text1 = nltk.tokenize.sent_tokenize(file1, language='english')
+text2 = nltk.tokenize.sent_tokenize(file2, language='english')
+
+# Compare sentences in text1 and text2 and print similarities
+for sentence in range(len(text1)):
+    for j in range (len(text2)):
+        if text1[sentence] == text2[j] and len(text1[i]) >= 1:
+            similarSents.append(text1[sentence])
+            ctr += 1
+            #print("\n Similarities detected (sentence)")
+            #print(f"Sentence in text 1: {text1[sentence]}")
+            #print(f"Sentence in text 2: {text2[j]}")
+            #break
+
+print(ctr)
+print(similarSents)
