@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h1 class="mb-3">Form</h1>
+
+    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+    <form name="data" action="/form" method="post">
+        <div class="form-row">
+            <div class="col">
+                <input type="text" id="name" name="name" class="form-control" placeholder="Enter name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="option"></label>
+            <select class="form-control" id="option" name="house">
+                <option selected disabled>House</option>
+                <option>Gryffindor</option>
+                <option>Hufflepuff</option>
+                <option>Ravenclaw</option>
+                <option>Slytherin</option>
+            </select>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="radio" id="option1" value="Beater">
+            <label class="form-check-label" for="exampleRadios1">
+                Beater
+                </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="radio" id="option2" value="Chaser">
+            <label class="form-check-label" for="exampleRadios2">
+                Chaser
+                </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="radio" id="option3" value="Keeper">
+            <label class="form-check-label" for="exampleRadios2">
+                Keeper
+                </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="radio" id="option4" value="Seeker">
+            <label class="form-check-label" for="exampleRadios2">
+                Seeker
+                </label>
+        </div>
+
+        <p></p>
+        <button type="submit" button onclick="return validate()" class="btn btn-primary">Submit</button>
+  </form>
+
+  <script>
+  function validate()
+  {
+        var name = document.getElementById("name")
+        var house = document.getElementById("option")
+        var option1 = document.getElementById("option1")
+        var option2 = document.getElementById("option2")
+        var option3 = document.getElementById("option3")
+        var option4 = document.getElementById("option4")
+
+        if (name.value == '')
+        {
+            alert("You must specify your name.");
+            return true
+        }
+        else if (house.value == "House")
+        {
+            alert("You must specify your house.")
+            return false
+        }
+        else if (option1.checked == false && option2.checked == false && option3.checked == false && option4.checked == false)
+        {
+            alert("You must specify your option.")
+            return false
+        }
+        else{
+            return true
+
+        }
+    }
+  </script>
+
+{% endblock %}
