@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>My Cart</h1>
+        {% for item in cart %}
+            {{ item }} : {{cart[item]}}
+            <br/>
+        {% endfor %}
+
+
+    </body>
+</html>
