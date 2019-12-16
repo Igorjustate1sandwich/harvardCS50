@@ -1,0 +1,24 @@
+{% extends "layout_table2.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block heading %}
+<h2>Transaction History</h2>
+{% endblock %}
+{% block table %}
+    {% for row in range(size) %}
+    <p>
+        <tr>
+            <td> {{ stock[loop.index0] }} </td>
+            <td> {{ quantity[loop.index0] }} </td>
+            <td> ${{ price[loop.index0] }} </td>
+            <td> {{ time[loop.index0] }} </td>
+        </tr>
+    </p>
+    {% endfor %}
+
+{% endblock %}
+
+

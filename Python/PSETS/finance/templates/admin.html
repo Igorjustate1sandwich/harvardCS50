@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Admin
+{% endblock %}
+
+{% block main %}
+<h2>Admin Treasury</h2>
+Current Balance: ${{ "%.2f" | format(cash[0]['cash']) }} <p></p>
+
+Select deposit value... <p></p>
+<form action="/admin" method="post">
+    <input class="btn btn-outline-success btn-lg" type="submit" name="500" value="$500"/>
+    <input class="btn btn-outline-success btn-lg" type="submit" name="2500" value="$2500"/>
+    <input class="btn btn-outline-success btn-lg" type="submit" name="5000" value="$5000"/>
+</form>
+
+{% endblock %}
