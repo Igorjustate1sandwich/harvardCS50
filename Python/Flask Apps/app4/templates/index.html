@@ -1,8 +1,24 @@
 {% extends "layout.html" %}
 
 {% block main %}
-<h1>Welcome Home</h1>
-<p>Country roads...</p>
+
+<div class="jumbotron jumbotron-color">
+    <h1 class="display-4">Hey!</h1>
+    <p class="lead">Thanks for using Ideacloud! Get started by sharing your ideas below!</p>
+</div>
+
+
+<form>
+    <div class="form-group default-size default-border">
+        <label for="exampleFormControlTextarea1">What's on your mind?</label> 
+        <button type="button" class="btn btn-dark element-button">Submit!</button>
+
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>   
+    </div>
+</form>
+
+<h1> <italic> <center> ~ My Ideas ~ </center> </italic></h1>
+
 
 {% endblock %}
 
