@@ -1,6 +1,12 @@
-from flask import Flask, render_template, request, redirect, flash
+from flask import Flask, render_template, request, redirect, flash, session
+from tempfile import mkdtemp
+from flask_session import Session
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
+from helpers import login_required
+from collections import OrderedDict
+
+
 import sqlite3
 
 app = Flask(__name__)
@@ -9,7 +15,10 @@ app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 # Configure Session Information
-    # todo
+app.config["SESSION_FILE_DIR"] = mkdtemp()
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"] = "filesystem"
+Session(app)
 
 # Setup SQLite3 - create connection object that represents database
 con = sqlite3.connect("ideacloud.db", check_same_thread=False)
@@ -19,8 +28,12 @@ db = con.cursor()
 
 # index
 @app.route("/")
+@login_required
 def index():
-    return render_template("index.html")
+    with con:
+        db.execute("SELECT name FROM users WHERE id = :id", {"id": session["user_id"]})
+        name = db.fetchall()
+    return render_template("index.html", name=name[0][0])
 
 # register
 @app.route("/register", methods=["GET", "POST"])
@@ -53,7 +66,7 @@ def register():
             rows = db.execute(f"INSERT INTO users (name, hash) VALUES('{username}', '{hash}')")
 
         # Success
-        return redirect("register")
+        return redirect("login")
 
     else:
         return render_template("register.html")
@@ -62,7 +75,7 @@ def register():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     # Forget any user_id
-        # todo
+    session.clear()
 
     if request.method == "POST":
         # Ensure username has been submitted
@@ -92,7 +105,7 @@ def login():
                 print(rows)
                 
                 # Remember which user has logged in
-                    # todo
+                session["user_id"] = rows[0][0]
                 
                 # Redirect user to homepage
                 return redirect("/")
