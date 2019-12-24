@@ -30,14 +30,21 @@ p {
     background-color: #7575dd;
 }
 
-.jumbotron-color {
+.jumbotron-alert {
     background-color: #eb1736		;
     margin: 30px;
     padding: 20px;
 }
 
+.jumbotron-blue {
+    background-color: #0074D9
+;
+    margin: 30px;
+    padding: 20px;
+}
 .default-size {
     margin: 30px;
+    
 }
 
 label {
@@ -54,3 +61,4 @@ label {
     margin-right: auto;
     margin-bottom: 10px;
 }
+
