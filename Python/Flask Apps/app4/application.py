@@ -6,8 +6,8 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from helpers import login_required
 from collections import OrderedDict
 
-
 import sqlite3
+import datetime
 
 app = Flask(__name__)
 
@@ -27,13 +27,49 @@ con = sqlite3.connect("ideacloud.db", check_same_thread=False)
 db = con.cursor()
 
 # index
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 @login_required
 def index():
+    user_posts_db = []
+    user_posts = []
+    user_post_count = 0
+
+    # Retrieve user information from database
     with con:
+        # Get username
         db.execute("SELECT name FROM users WHERE id = :id", {"id": session["user_id"]})
         name = db.fetchall()
-    return render_template("index.html", name=name[0][0])
+
+        # Get post history
+        rows = db.execute("SELECT post from posts WHERE id = :id", {"id": session["user_id"]})
+        for row in rows:
+            user_posts_db.append(row)
+            user_post_count += 1
+    
+    # Slice characters and clean posts
+    for i in range(user_post_count):
+        temp = str(user_posts_db[i])
+        user_posts.append(temp[1:-2])
+
+    if request.method == "POST":            # Submission handler
+        # Get text from submission box 
+        text = request.form['text']
+
+        # Check if text meets requirements (max 240 characters, min 1 character)
+        if len(text) > 240 or len(text) <1:
+            print("Error: Invalid Text")
+            return render_template("index.html", name=name[0][0])
+
+        # Store text as submission within database
+        with con:
+            # Save date and time of post
+            datetimeObj = datetime.datetime.now().strftime("%Y-%m-%d %I:%M %p")
+            # Write to DB
+            rows = db.execute("INSERT INTO posts (id, name, post, time) VALUES(?, ?, ?, ?)", (session["user_id"], name[0][0], text, datetimeObj))
+
+        return redirect("/")
+    else:
+        return render_template("index.html", name=name[0][0], posts = user_posts, postcount = user_post_count)
 
 # register
 @app.route("/register", methods=["GET", "POST"])
@@ -63,7 +99,8 @@ def register():
 
         # Insert user details to the database
         with con:
-            rows = db.execute(f"INSERT INTO users (name, hash) VALUES('{username}', '{hash}')")
+            rows = db.execute("INSERT INTO users (name, hash) VALUES(?, ?)", (username, hash))
+            #rows = db.execute(f"INSERT INTO users (name, hash) VALUES('{username}', '{hash}')")
 
         # Success
         return redirect("login")

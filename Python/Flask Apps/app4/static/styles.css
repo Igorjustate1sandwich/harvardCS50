@@ -30,21 +30,43 @@ p {
     background-color: #7575dd;
 }
 
+.default-border2 {
+    border-color: #ff414e;
+    border-radius: 0px;
+    border-width: 3px;
+    border-style: solid;
+    background-color: #ff414e;
+}
+
+.default-border3 {
+    border-color: #9068be;
+    border-radius: 0px;
+    /* border-radius: 5px; */
+    border-width: 3px;
+    border-style: solid;
+    background-color: #9068be;
+}
+
 .jumbotron-alert {
-    background-color: #eb1736		;
-    margin: 30px;
+    background-color: #ff414e		;
+    margin: 20px;
     padding: 20px;
 }
 
 .jumbotron-blue {
-    background-color: #0074D9
-;
+    background-color: #0074D9;
     margin: 30px;
     padding: 20px;
 }
+
+.jumbotron-post1 {
+    background-color: #101357;
+    margin: 30px;
+    padding: 20px;
+}
+
 .default-size {
     margin: 30px;
-    
 }
 
 label {
