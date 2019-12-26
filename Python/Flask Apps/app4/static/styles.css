@@ -9,7 +9,7 @@ h1 {
 
 p {
     font-family: 'Gelasio', Arial, serif; 
-    font-size: 21px;
+    font-size: 22px;
     font-style: normal; font-variant: normal;
     line-height: 25px;
     color: #ffffff;
@@ -17,17 +17,24 @@ p {
     margin: 30px;
 }
 
+.label-small {
+    font-family: 'Gelasio', Arial, serif; 
+    font-size: 18px;
+    font-style: normal; font-variant: normal;
+    color: #ffffff;
+}
+
 .orange-text {
     color: orange
 }
 
 .default-border {
-    border-color: #7575dd;
+    border-color: #393f4d;
     border-radius: 5px;
     border-width: 3px;
     padding: 10px;
     border-style: solid;
-    background-color: #7575dd;
+    background-color: #393f4d;
 }
 
 .default-border2 {
@@ -38,14 +45,6 @@ p {
     background-color: #ff414e;
 }
 
-.default-border3 {
-    border-color: #9068be;
-    border-radius: 0px;
-    /* border-radius: 5px; */
-    border-width: 3px;
-    border-style: solid;
-    background-color: #9068be;
-}
 
 .jumbotron-alert {
     background-color: #ff414e		;
@@ -60,7 +59,7 @@ p {
 }
 
 .jumbotron-post1 {
-    background-color: #101357;
+    background-color: #091f36;
     margin: 30px;
     padding: 20px;
 }
@@ -84,3 +83,9 @@ label {
     margin-bottom: 10px;
 }
 
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}

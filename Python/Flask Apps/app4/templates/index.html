@@ -18,17 +18,26 @@
 
 {% for row in range(postcount) %}
 <div class="jumbotron jumbotron-post1">
+    <label class = "label-small">Post {{row +1}}, {{time[loop.index0]}}</label>
     <p class="lead"> {{ posts[loop.index0] }}</p>
 </div>
 {% endfor %}
 
+{% if not postcount  %}
+<div class="jumbotron jumbotron-post1">
+    <p class="lead"> This is where your ideas will be! It's empty here...</p>
+</div>
+{% endif %}
 
-<div class="default-border2">
+
+<div class="default-border2 footer">
     <div class="jumbotron jumbotron-alert">
         <h1 class="display-4">Hey {{ name }}!</h1>
-        <p class="lead">Thanks for using Ideacloud! We're constantly adding new features, stay tuned for the fall update!</p>
+        <p class="lead">Thanks for using Ideacloud! We're constantly adding new features, stay tuned for the fall
+            update!</p>
     </div>
 </div>
 
 {% endblock %}
+
 

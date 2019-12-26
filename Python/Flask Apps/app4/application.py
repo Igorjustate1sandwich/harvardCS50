@@ -32,6 +32,8 @@ db = con.cursor()
 def index():
     user_posts_db = []
     user_posts = []
+    user_time_db = []
+    user_time = []
     user_post_count = 0
 
     # Retrieve user information from database
@@ -45,11 +47,19 @@ def index():
         for row in rows:
             user_posts_db.append(row)
             user_post_count += 1
+        
+        # Get time history
+        times = db.execute("SELECT time from posts WHERE id = :id", {"id": session["user_id"]})
+        for time in times:
+            user_time_db.append(time)
+        
     
     # Slice characters and clean posts
     for i in range(user_post_count):
         temp = str(user_posts_db[i])
         user_posts.append(temp[1:-2])
+        temp = str(user_time_db[i])
+        user_time.append(temp[2:-3])
 
     if request.method == "POST":            # Submission handler
         # Get text from submission box 
@@ -69,7 +79,7 @@ def index():
 
         return redirect("/")
     else:
-        return render_template("index.html", name=name[0][0], posts = user_posts, postcount = user_post_count)
+        return render_template("index.html", name=name[0][0], posts = user_posts, postcount = user_post_count, time=user_time)
 
 # register
 @app.route("/register", methods=["GET", "POST"])
