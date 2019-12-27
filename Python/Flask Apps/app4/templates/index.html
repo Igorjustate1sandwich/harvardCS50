@@ -20,14 +20,13 @@
         </h1><br>
 
         {% for row in range(postcount) %}
-        {% set var = postID[loop.index0] %}
-        <form id="myForm" action = "/delete" method="post">
+        <form action = "/delete" method="post">
             <div class="jumbotron jumbotron-post1">
+                {% set var = postID[loop.index0] %}
                 <label class="label-small">Post {{row +1}}, {{time[loop.index0]}}</label>
                 <p class="lead"> {{  posts[loop.index0] }}</p>
-                <input type="hidden" name="name" value= "{{ var }}">
-                <a href="#" onclick="document.getElementById('myForm').submit();">Delete</a>
-
+                <input type="hidden" name="varVal" value= "{{ var }}">
+                <button type="submit" class="btn btn-dark element-button">Delete</button>
             </div>
         </form>
         {% endfor %}

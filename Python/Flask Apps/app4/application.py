@@ -68,7 +68,10 @@ def index():
         user_time.append(temp[2:-3])
         temp = str(postID_db[i])
         postID.append(temp[1:-2])
-        print(postID[i])
+    
+    print("POSTS", user_post_count)
+    print(user_posts)
+    print("pIDs:", postID)
 
     if request.method == "POST":            # Submission handler
         # Get text from submission box 
@@ -95,8 +98,9 @@ def index():
 @login_required
 def delete():
     if request.method == "POST":
-        postID = request.form['name']
-        print("postID =", postID)
+        postID = int(request.form['varVal'])
+        #postID +=1
+        print("DELETE postID =", postID)
 
         # Go to 'posts' database and delete the corresponding postID
         with con:
