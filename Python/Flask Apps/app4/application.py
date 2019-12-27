@@ -35,6 +35,8 @@ def index():
     user_time_db = []
     user_time = []
     user_post_count = 0
+    postID_db = []
+    postID = []
 
     # Retrieve user information from database
     with con:
@@ -52,14 +54,21 @@ def index():
         times = db.execute("SELECT time from posts WHERE id = :id", {"id": session["user_id"]})
         for time in times:
             user_time_db.append(time)
+
+        # Get postID 
+        pID = db.execute("SELECT postID from posts WHERE id = :id", {"id": session["user_id"]})
+        for post in pID:
+            postID_db.append(post)
         
-    
     # Slice characters and clean posts
     for i in range(user_post_count):
         temp = str(user_posts_db[i])
         user_posts.append(temp[1:-2])
         temp = str(user_time_db[i])
         user_time.append(temp[2:-3])
+        temp = str(postID_db[i])
+        postID.append(temp[1:-2])
+        print(postID[i])
 
     if request.method == "POST":            # Submission handler
         # Get text from submission box 
@@ -79,7 +88,23 @@ def index():
 
         return redirect("/")
     else:
-        return render_template("index.html", name=name[0][0], posts = user_posts, postcount = user_post_count, time=user_time)
+        return render_template("index.html", name=name[0][0], posts = user_posts, postcount = user_post_count, time=user_time, postID = postID)
+
+# delete
+@app.route("/delete", methods=["POST"])
+@login_required
+def delete():
+    if request.method == "POST":
+        postID = request.form['name']
+        print("postID =", postID)
+
+        # Go to 'posts' database and delete the corresponding postID
+        with con:
+            db.execute("DELETE FROM posts WHERE postID = :postID", {"postID": postID})
+
+        return redirect("/")
+    else:
+        return redirect("/")
 
 # register
 @app.route("/register", methods=["GET", "POST"])

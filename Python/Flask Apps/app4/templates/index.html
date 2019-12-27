@@ -1,7 +1,5 @@
 {% extends "layout.html" %}
-{% block title %} Ideacloud {% endblock %}
-
-
+{% block title %} Ideacloud! {% endblock %}
 
 {% block main %}
 <div id="page-container">
@@ -10,18 +8,28 @@
             <div class="form-group default-size default-border">
                 <label for="exampleFormControlTextarea1">What's on your mind, {{ name }}?</label>
                 <button type="submit" class="btn btn-dark element-button">Submit!</button>
-                <textarea class="form-control" maxlength="240" name="text" id="text" rows="3"></textarea>
+                <textarea class="form-control" maxlength="240" name="text" id="text" rows="3" onkeyup="charCount(this);"></textarea>
+                <p class="p-small" id="charNum">240 characters remaining</p>
             </div>
         </form>
 
-        <h1><italic><center> ~ My Ideas ~ </center></italic></h1>
-        <br>
+        <h1>
+            <italic>
+                <center> ~ My Ideas ~ </center>
+            </italic>
+        </h1><br>
 
         {% for row in range(postcount) %}
-        <div class="jumbotron jumbotron-post1">
-            <label class="label-small">Post {{row +1}}, {{time[loop.index0]}}</label>
-            <p class="lead"> {{ posts[loop.index0] }}</p>
-        </div>
+        {% set var = postID[loop.index0] %}
+        <form id="myForm" action = "/delete" method="post">
+            <div class="jumbotron jumbotron-post1">
+                <label class="label-small">Post {{row +1}}, {{time[loop.index0]}}</label>
+                <p class="lead"> {{  posts[loop.index0] }}</p>
+                <input type="hidden" name="name" value= "{{ var }}">
+                <a href="#" onclick="document.getElementById('myForm').submit();">Delete</a>
+
+            </div>
+        </form>
         {% endfor %}
 
         {% if not postcount  %}
@@ -32,11 +40,10 @@
             <p class="lead"> Start by typing your ideas in the submission box atop the page!</p>
         </div>
         <div class="jumbotron jumbotron-post1">
-            <p class="lead"> To keep things concise, you may write up to 240 characters per idea. You may share as many ideas as you like! Have fun!</p>
+            <p class="lead"> To keep things concise, you may write up to 240 characters per idea. You can share as many ideas as you like! Have fun!</p>
         </div>
         {% endif %}
     </div>
-
     <footer id="footer">
             <div class="default-border2 footer">
                 <div class="jumbotron jumbotron-alert">
@@ -46,5 +53,13 @@
                 </div>
             </div>
     </footer>
+    <script>
+        function charCount(obj){
+            var maxLen = 240;
+            var strLen = obj.value.length;
+            var charRemain = (maxLen - strLen);
+            document.getElementById("charNum").innerHTML = charRemain + ' characters remaining';
+        }
+    </script>
 </div>
 {% endblock %}

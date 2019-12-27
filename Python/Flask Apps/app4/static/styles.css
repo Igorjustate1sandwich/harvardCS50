@@ -7,6 +7,13 @@ h1 {
 
 }
 
+a {
+    color: #AAAAAA;
+    font-size: 16px;
+    text-decoration: none;
+
+}
+
 p {
     font-family: 'Gelasio', Arial, serif; 
     font-size: 22px;
@@ -16,6 +23,15 @@ p {
     padding: 0px;
     margin: 30px;
 }
+.p-small {
+    font-size: 18px;
+    font-style: normal; font-variant: normal;
+    color: #ffffff;
+    margin-left: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
 
 .label-small {
     font-family: 'Gelasio', Arial, serif; 
@@ -65,7 +81,7 @@ p {
 }
 
 .default-size {
-    margin: 30px;
+    margin: 30px;    
 }
 
 label {
@@ -82,7 +98,6 @@ label {
     margin-right: auto;
     margin-bottom: 10px;
 }
-
 
 
 #page-container {
