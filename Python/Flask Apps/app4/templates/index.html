@@ -26,7 +26,7 @@
                 <label class="label-small">Post {{row +1}}, {{time[loop.index0]}}</label>
                 <p class="lead"> {{  posts[loop.index0] }}</p>
                 <input type="hidden" name="varVal" value= "{{ var }}">
-                <button type="submit" class="btn btn-dark element-button">Delete</button>
+                <a href="#" onclick="$(this).closest('form').submit()">Delete</a>
             </div>
         </form>
         {% endfor %}
