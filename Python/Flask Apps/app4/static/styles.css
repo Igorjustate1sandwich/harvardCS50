@@ -39,10 +39,6 @@ p {
     color: #ffffff;
 }
 
-.orange-text {
-    color: orange
-}
-
 .default-border {
     border-color: #393f4d;
     border-radius: 5px;
@@ -73,7 +69,6 @@ p {
     padding: 20px;
 }
 
-
 .jumbotron-blue {
     background-color: #0074D9;
     margin: 30px;
@@ -97,14 +92,6 @@ label {
     line-height: 25px;
     color: #ffffff;
 }
-
-.element-button {
-    position:relative;
-    margin-left: 10px;
-    margin-right: auto;
-    margin-bottom: 10px;
-}
-
 
 #page-container {
   position: relative;
