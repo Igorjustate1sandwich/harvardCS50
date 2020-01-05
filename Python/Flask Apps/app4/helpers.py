@@ -13,6 +13,8 @@
 # Cloud powered note taking: user posts are stored online in a database.
 # Features stylish CSS design with emphasis on typography. 
 
+### Video: https://youtu.be/QzLl9YKy9s0 
+
 from flask import redirect, render_template, request, session
 from functools import wraps
 
