@@ -1,4 +1,4 @@
-# Learning Programming in CS50 (Harvard Introduction to Computer Science 2019/2020)
+# Learning with CS50 (Harvard Intro to Comp Sci 2019/2020)
 This repo is where I begun my programming journey. I used Harvard CS50 as my main learning resource. 
 Completion status: Completed (Jan 2020)
 Certificate: Viewable on Linkedin. 
