@@ -1,0 +1,12 @@
+{% extends "table.html" %}
+
+{% block tableRow %}
+
+    {% for student in students %}
+        <tr>
+            <td>{{ student[0] }}</td>
+            <td>{{ student[1] }}</td>
+            <td>{{ student[2] }}</td>
+        </tr>
+    {% endfor %}
+{% endblock %}
