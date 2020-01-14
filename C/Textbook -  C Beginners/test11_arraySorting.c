@@ -7,7 +7,7 @@
 
 int main()
 {
-    int arraySize = 3;
+    int arraySize = 5;
     int array[5] = {50, 40, 30, 20, 200};   // unsorted
 
     /* Bubble Sort via Nested Loop (EASY)
