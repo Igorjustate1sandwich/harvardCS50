@@ -7,6 +7,7 @@
 Repo consists of two "languages" folders and a "pset" folder. 
 * The languages folders (C, Python) contain unorganized code and exercised related to CS50 that I completed for my own academic benefit. 
 * Additionally, CS50 consisted of 22 mandatory problem sets (psets). You will find my solutions to these psets in the psets folder.
+* If you are a CS50 student please **do not** view the pset solutions.
 
 ## Topics Covered:
 * Languages (C, Python, HTML, JS)
