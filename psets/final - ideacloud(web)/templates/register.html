@@ -1,0 +1,60 @@
+{% extends "layout_logout.html" %}
+{% block title %} Register {% endblock %}
+
+{% block main %}
+
+<div class="jumbotron jumbotron-blue">
+    <h1 class="display-4">Welcome</h1>
+    <p class="lead">Enter your details to get started!</p>
+</div>
+
+<center> <form action="/register" onsubmit="return validation()" method="post">
+    <div class="form-group default-size">
+        <div class="col-4">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" minlength="1" required>
+        </div>
+    </div>
+
+    <div class="form-group default-size" >
+        <div class="col-4" style="text-align:center" >
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password" minlength="1" required>
+        </div>
+    </div>
+
+    <div class="form-group default-size">
+        <div class="col-4">
+            <label for="confirmation">Password (confirmation)</label>
+            <input type="password" class="form-control" id="confirmation" name="confirmation" placeholder="Confirm Password" minlength="1" required>
+        </div>
+    </div>
+
+    <div class="default-size">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form> </center>
+
+<script>
+    function validation(){
+        var usr = document.getElementById("username").value;
+        var pword = document.getElementById("password").value;
+        var confirm = document.getElementById("confirmation").value;
+        
+        if (usr == ''){
+            alert("Username field is empty.")
+            return false;
+        }
+        if (pword == '' || confirm == ''){
+            alert("Password field(s) are empty.");
+            return false;
+        }
+        if (pword !== confirm){
+            alert("Passwords do not match.");
+            return false;
+        }
+        return true;
+    }
+</script>
+ 
+{% endblock %}
