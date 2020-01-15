@@ -25,5 +25,3 @@ Repo consists of two "languages" folders and a "pset" folder.
 ## Resources used:
 * Harvard CS50 via edX.
 * Textbook: Greg Perry Dean Miller - C Programming Absolute Beginner’s Guide 3(2014, Pearson Education)
-
-Hello World!!!!
