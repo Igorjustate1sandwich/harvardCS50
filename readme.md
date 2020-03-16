@@ -6,8 +6,7 @@
 
 # Learning with CS50 (Harvard Intro to Comp Sci 2019/2020)
 **This repo is where I began my programming journey.** I used Harvard CS50 (Introduction to Computer Science) as a means to jump into the programming world.
-* Completion status: Completed (Jan 2020)
-* Certificate: Yes. Viewable on Linkedin. 
+* Completion status: Completed (Jan 2020) with certificate. 
 
 ## Repo Structure
 Repo consists of two "languages" folders and a "pset" folder. 
