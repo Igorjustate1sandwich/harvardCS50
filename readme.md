@@ -1,3 +1,9 @@
+# Capstone Project: Ideacloud
+* Created with Python and Flask
+* Lets users register and share their ideas with the world
+* YouTube Demonstration: https://youtu.be/lpNOZ6g3ohM
+
+
 # Learning with CS50 (Harvard Intro to Comp Sci 2019/2020)
 **This repo is where I began my programming journey.** I used Harvard CS50 (Introduction to Computer Science) as a means to jump into the programming world.
 * Completion status: Completed (Jan 2020)
