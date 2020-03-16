@@ -17,7 +17,7 @@ Repo consists of two "languages" folders and a "pset" folder.
 ## Topics Covered:
 * Languages (C, Python, HTML, JS)
 * Variables
-* Algortihims
+* Algorithms
 * Pointers
 * Structs
 * Data Structures: Hash tables & Linked Lists
