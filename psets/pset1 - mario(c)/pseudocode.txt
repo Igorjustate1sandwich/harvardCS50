@@ -1,0 +1,91 @@
+#include <stdio.h>
+#include <cs50.h>
+
+int main(void)
+{
+    
+    string row1 = ("        # \n");
+    string row2 = ("       ## \n");
+    string row3 = ("      ### \n");
+    string row4 = ("     #### \n");
+    string row5 = ("    ##### \n");
+    string row6 = ("   ###### \n");
+    string row7 = ("  ####### \n");
+    string row8 = (" ######## \n");
+    
+    int userheight = get_int("Height: ");
+    
+    if (userheight < 1 || userheight > 8)
+    {
+        printf("Invalid Input. Select number from 1 to 8. \n");
+    }
+    
+    if (userheight == 1)
+    {
+        printf("%s \n", row1);
+    }
+    
+    else if (userheight == 2)
+    {
+        printf("%s", row1);
+        printf("%s", row2);
+    }
+    
+    else if (userheight == 3)
+    {
+        printf("%s", row1);
+        printf("%s", row2);
+        printf("%s", row3); 
+    }
+    
+    else if (userheight == 4)
+    {
+        printf("%s", row1);
+        printf("%s", row2);
+        printf("%s", row3);
+        printf("%s", row4);
+    }
+    
+    else if (userheight == 5)
+    {
+        printf("%s", row1);
+        printf("%s", row2);
+        printf("%s", row3);
+        printf("%s", row4);
+        printf("%s", row5);
+    }
+    
+    else if (userheight == 6)
+    {
+        printf("%s", row1);
+        printf("%s", row2);
+        printf("%s", row3);
+        printf("%s", row4);
+        printf("%s", row5);
+        printf("%s", row6);
+    }
+    
+    else if (userheight == 7)
+    {
+        printf("%s", row1);
+        printf("%s", row2);
+        printf("%s", row3);
+        printf("%s", row4);
+        printf("%s", row5);
+        printf("%s", row6);
+        printf("%s", row7);
+    }
+    
+    else if (userheight == 8)
+    {
+        printf("%s", row1);
+        printf("%s", row2);
+        printf("%s", row3);
+        printf("%s", row4);
+        printf("%s", row5);
+        printf("%s", row6);
+        printf("%s", row7);
+        printf("%s", row8);
+    }
+}
+

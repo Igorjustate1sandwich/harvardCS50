@@ -1,0 +1,39 @@
+{% extends "layout_table.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block heading %}
+<h2>My Portfolio</h2>
+{% endblock %}
+{% block table %}
+    {% for row in range(size) %}
+    <p>
+        <tr>
+            <td> {{ symbols[loop.index0] }} </td>
+            <td> {{ names[loop.index0] }} </td>
+            <td> {{ quantity[loop.index0] }} </td>
+            <td> ${{ stockVal[loop.index0]['price'] }} </td>
+            <td> ${{ "%.2f" | format(total_ap[loop.index0]) }}  </td>
+        </tr>
+    </p>
+    {% endfor %}
+    <tr>
+        <td><b>Asset Sum</b></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><b>${{ "%.2f" | format(assets) }}</b></td>
+    </tr>
+
+    <tr>
+        <td> <b>Balance</b></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td> <b>${{ "%.2f" | format(cash[0]['cash']) }}</b> </td>
+    </tr>
+{% endblock %}
+
+

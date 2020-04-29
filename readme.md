@@ -1,15 +1,16 @@
-# Learning Programming in CS50
-This is where I am teaching myself how to program via CS50.
-
-## Repo Structure
-Repo is sorted by languages used during the course. Within each language folder you will find code containing exercises and topics that were covered in CS50 (e.g. algorithims).
+# Capstone Project: Ideacloud
+* Created with Python and Flask
+* Lets users register and share their ideas with the world
+* YouTube Demonstration: https://youtu.be/lpNOZ6g3ohM
 
 ## Topics Covered:
+* Languages (C, Python, HTML, JS)
 * Variables
-* Algortihims: Bubble Sort
+* Algorithms
 * Pointers
 * Structs
 * Data Structures: Hash tables & Linked Lists
+* Web Development (Flask)
 
 ## Languages Covered:
 * C [Week 0 - Week 4]
@@ -17,5 +18,4 @@ Repo is sorted by languages used during the course. Within each language folder 
 
 ## Resources used:
 * Harvard CS50 via edX.
-* https://adriann.github.io/programming_problems.html
-* Greg Perry Dean Miller - C Programming Absolute Beginner’s Guide 3(2014, Pearson Education)
+* Textbook: Greg Perry Dean Miller - C Programming Absolute Beginner’s Guide 3(2014, Pearson Education)
