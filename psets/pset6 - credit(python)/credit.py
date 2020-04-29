@@ -1,3 +1,5 @@
+# Specification: https://docs.cs50.net/problems/credit/credit.html
+
 # Conditional checking & variable declarations
 while True:
     print("\nNumber:", end=" ")
