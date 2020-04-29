@@ -18,7 +18,7 @@ float get_correct_float(string prompt)
     float x;
     do
     {
-    x = get_float("%s", prompt);
+        x = get_float("%s", prompt);
     }
     while (x < 0);
     return x;
