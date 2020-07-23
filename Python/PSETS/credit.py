@@ -1,4 +1,7 @@
 # Final solution for pset6 (credit) by stndn.
+# PSET Specification: https://cs50.harvard.edu/x/2020/psets/6/credit/
+# Example: Input 4012888888881881 and get 'VISA' as output.
+
 # Conditional checking & variable declarations
 while True:
     print("\nNumber:", end=" ")
@@ -35,6 +38,7 @@ else:
     card = "Unknown Card"
 
 # Luhns Algorithim
+# https://en.wikipedia.org/wiki/Luhn_algorithm
 for i in range(size-2, -1, -2):
     # Step 1: Double value of every second digit
     numbers[i] = numbers[i] * 2
